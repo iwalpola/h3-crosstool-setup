@@ -1,0 +1,4 @@
+echo "Setting up the Cross Compiler Environment"
+# prefix of all the tools in a toolchain
+export CCPREFIX="/usr/bin/arm-linux-gnueabihf-"
+export ARMPREFIX=/home/isuru/ARM_Install #path where the cross compiled programs will be installed

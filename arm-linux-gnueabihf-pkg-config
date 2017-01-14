@@ -1,0 +1,9 @@
+#!/bin/sh
+
+SYSROOT=~/ARM_Install
+
+export PKG_CONFIG_DIR=
+export PKG_CONFIG_LIBDIR=${SYSROOT}/lib/pkgconfig #commented out :${SYSROOT}/usr/share/pkgconfig
+export PKG_CONFIG_SYSROOT_DIR=${SYSROOT}
+
+exec pkg-config "$@"

@@ -1,0 +1,12 @@
+Hi Nadeem, thank you for this excellent guide, I learned a lot about the cross compilation process.
+
+I'm building on a Ubuntu x64 Xenial host for armhf target, and I'm using the standard cross compiling toolchain (arm-linux-gnuabihf-gcc and arm-linux-gnuabihf-g++). I have also installed "arm-linux-gnuabihf-gcc-pkg-config". My CCPREFIX="/usr/bin/arm-linux-gnueabihf-"
+
+Cross compilation config:
+XVID: I used "./configure --prefix=${ARMPREFIX} --host=arm-linux-gnueabihf --disable-assembly"
+
+x264: I used "./configure --enable-shared --host=arm-linux --disable-asm --prefix=${ARMPREFIX} --cross-prefix=${CCPREFIX}"
+
+ffmpeg:
+
+./configure --enable-cross-compile --cross-prefix=${CCPREFIX} --target-os=linux --arch=armhf --enable-shared --disable-static --enable-gpl --enable-nonfree --enable-ffmpeg --disable-ffplay --enable-ffserver --enable-swscale --enable-pthreads --disable-yasm --disable-stripping --enable-libx264 --enable-libxvid --prefix=${ARMPREFIX} --extra-cflags="-I"${ARMPREFIX}"/include" --extra-ldflags="-L"${ARMPREFIX}"/lib"

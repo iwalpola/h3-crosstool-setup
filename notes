@@ -1,0 +1,2 @@
+./configure --prefix=${ARMPREFIX} --host=arm-linux-gnueabihf --disable-assembly
+
